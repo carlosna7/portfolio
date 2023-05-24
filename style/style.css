@@ -54,7 +54,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 3.5rem 1.5rem 6.5rem;
+    padding: 1.5rem 6.5rem 1.5rem 6.5rem;
     border-bottom: var(--border);
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -117,38 +117,47 @@ section {
     margin: 0 75% 0 0 ;
 } */
 
-/* ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------- */
 
 .aboutMe .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--color-white2);
+    background: var(--color-white2);    
 }
 
-.aboutMe .container .image {
-    
+/* .aboutMe .container .content-img .image {
+    margin:0 25px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.aboutMe .container .content-img .image img {
+    width: 300px;
 }
 
-.aboutMe .container .image img {
+/* .aboutMe .container .content {
     
-}
+}  */
 
-.aboutMe .container .content {
-    
+.aboutMe .container .content-text {
+    margin:0 0 0 20px;
 }
 
 .aboutMe .container .content-text p {
     color: var(--color-black2);
     text-align: justify;
     font-weight: bold;
-    font-size: 1.2em;
+    padding-bottom: 40px;
 }
 
 .aboutMe .container .content-text .btn span {
     color: var(--color-black2);
+    position: absolute;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin-left: 42%;
 }
 
 /* ------------------------------------------------------------------------------ */
