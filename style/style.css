@@ -134,7 +134,7 @@ section {
 } */
 
 .aboutMe .container .content-img .image img {
-    width: 300px;
+    width: 400px;
 }
 
 /* .aboutMe .container .content {
@@ -142,7 +142,7 @@ section {
 }  */
 
 .aboutMe .container .content-text {
-    margin:0 0 0 20px;
+    margin:0 0 0 30px;
 }
 
 .aboutMe .container .content-text p {
