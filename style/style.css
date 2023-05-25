@@ -33,7 +33,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-    background: var(--color-white2);
+    background: var(--color-white);
 }
 
 section {
@@ -42,7 +42,7 @@ section {
 
 .title  {
     color: var(--color-black2);
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
     padding: 2rem 0 4rem 0;
 }
@@ -87,16 +87,19 @@ section {
     background-size: cover;
     display: flex;
     align-items: center;
+    padding: 7rem 7rem 2rem 7rem;
 }
 
 .home .content .text1 h1 {
     font-size: 4em;
     color: #fff;
+    color: var(--color-black2);
+    
 }
 
 .home .content .text1 h2 {
     font-size: 2em;
-    padding: 1rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
     color: #fff;
 }
 
@@ -119,30 +122,26 @@ section {
 
 /* ------------------------------------------------------------------- */
 
+.aboutMe {
+    color: var(--color-white2);
+}
+
 .aboutMe .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--color-white2);    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
 }
 
-/* .aboutMe .container .content-img .image {
-    margin:0 25px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-.aboutMe .container .content-img .image img {
-    width: 400px;
+.aboutMe .container .content-img {
+    text-align: center;
 }
 
-/* .aboutMe .container .content {
-    
-}  */
+.aboutMe .container .content-img img {
+    width: 340px; /*largura*/
+    height: 450px; /*altura*/
+}
 
 .aboutMe .container .content-text {
-    margin:0 0 0 30px;
+    text-align: justify;
 }
 
 .aboutMe .container .content-text p {
@@ -152,12 +151,21 @@ section {
     padding-bottom: 40px;
 }
 
-.aboutMe .container .content-text .btn span {
-    color: var(--color-black2);
-    position: absolute;
-    font-weight: bold;
+.aboutMe .container .content-text .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: var(--color-black2);
+    color: var(--color-white);
     font-size: 1.3em;
-    margin-left: 42%;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+.footer {
+    
 }
 
 /* ------------------------------------------------------------------------------ */
