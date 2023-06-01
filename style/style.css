@@ -1,6 +1,8 @@
 /* font-family: 'Fira Code', monospace; */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
     --color-black1: #000;
     --color-black2: #222222;
@@ -8,6 +10,7 @@
     --color-white2: #f1f1f1;
     --color-what: #000;
     --color-blue1: #003cff;
+    --color-blue2: #407BFF;
     --border: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -42,7 +45,7 @@ section {
 
 .title  {
     color: var(--color-black2);
-    font-size: 2.5em;
+    font-size: 3rem;
     text-align: center;
     padding: 2rem 0 4rem 0;
 }
@@ -92,9 +95,14 @@ section {
 
 .home .content .text1 h1 {
     font-size: 4em;
-    color: #fff;
-    color: var(--color-black2);
-    
+    color: var(--color-black1);
+    border-right: 5px solid var(--color-black1);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+    typing 2.5s steps(20),
+    cursor .6s step-end infinite alternate;
 }
 
 .home .content .text1 h2 {
@@ -128,33 +136,97 @@ section {
 
 .aboutMe .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));  
 }
 
-.aboutMe .container .content-img {
+.aboutMe .container .image {
     text-align: center;
 }
 
-.aboutMe .container .content-img img {
-    width: 340px; /*largura*/
-    height: 450px; /*altura*/
+.aboutMe .container .image img {
+    width: 450px;
+    height: 450px; 
 }
 
-.aboutMe .container .content-text {
-    text-align: justify;
+.aboutMe .container .text {
+    text-align: center;
 }
 
-.aboutMe .container .content-text p {
+.aboutMe .container .text p {
     color: var(--color-black2);
     text-align: justify;
     font-weight: bold;
     padding-bottom: 40px;
 }
 
-.aboutMe .container .content-text .btn {
+.aboutMe .container .text .btn {
     margin-top: 10px;
     display: inline-block;
-    background: var(--color-black2);
+    background: var(--color-blue2);
+    color: var(--color-white);
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 25px;
+    /* margin-left: 20px; */
+}
+
+.aboutMe .container .text .btn:hover {
+    background: var(--color-blue1);
+    transform: scale(1.05);
+    transition: .4s;
+}
+
+.aboutMe .container .text .btn:not(:hover) {
+    transition: .4s;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+.projects {
+    color: var(--color-white2);
+}
+
+.projects .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 2rem;
+}
+
+.projects .container .box {
+    text-align: center;
+}
+
+.projects .container .box .text h3 {
+    color: var(--color-black2);
+    font-weight: bold;
+    padding-bottom: 40px;
+    font-size: 1.9rem;
+}
+
+.projects .container .box .image img {
+    width: 100%; 
+}
+
+.projects .container .box .icons img {
+    width: 10%; 
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.projects .container .box .icons img:hover {
+    transform: scale(1.15);
+    transition: .3s;
+}
+
+.projects .container .box .icons img:not(:hover) {
+    transition: .3s;
+}
+
+.projects .container .box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: var(--color-blue2);
     color: var(--color-white);
     font-size: 1.3em;
     font-weight: bold;
@@ -162,10 +234,46 @@ section {
     padding: 8px 25px;
 }
 
-/* ------------------------------------------------------------------------------ */
+.projects .container .box  .btn:hover {
+    background: var(--color-blue1);
+    transform: scale(1.05);
+    transition: .4s;
+}
 
+.projects .container .box  .btn:not(:hover) {
+    transition: .4s;
+}
+
+/* ------------------------------------------------------------------------------ */
 .footer {
     
 }
 
 /* ------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+/* @media {
+
+} */
+
+
+
+
+
+
+
+
+@keyframes cursor {
+    50% { border-color: transparent;}
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
