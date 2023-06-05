@@ -11,7 +11,6 @@
     --color-what: #000;
     --color-blue1: #003cff;
     --color-blue2: #407BFF;
-    --border: 1px solid rgba(255,255,255,0.3);
 }
 
 * {
@@ -58,8 +57,8 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 6.5rem 1.5rem 6.5rem;
-    border-bottom: var(--border);
     position: fixed;
+    height: 12vh;
     top: 0; left: 0; right: 0;
     z-index: 1000;
 }
@@ -79,6 +78,17 @@ section {
     border-bottom: 0.1rem solid var(--color-white);
     padding-bottom: 0.5rem;
     transition-duration: 0.3s;
+}
+
+.header .mobile-menu {
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 2.5em;
+    display: none;
+}
+
+.header .fa-bars {
+    display: none;
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -190,7 +200,7 @@ section {
 .projects .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .projects .container .box {
@@ -259,11 +269,72 @@ section {
 
 
 
-/* @media {
+@media (max-width: 1200px) {
+    .header {
+        padding: 1.5rem 5.5rem 1.5rem 5.5rem;
+    }
 
-} */
+    .header .logo p {
+        font-size: 2.5em;
+    }
+    
+    .header .navbar a {
+        font-size: 1.1em;
+        margin: 0 15px 0 15px;
+    }
+    
+}
 
+@media (max-width: 990px) {
+    .header {
+        padding: 1.5rem 6.5rem 1.5rem 6.5rem;
+    }
 
+    .header .logo p {
+        font-size: 3em;
+    }
+
+    .header .navbar a {
+        color: var(--color-white);
+        margin: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .header .navbar a:hover {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .header .mobile-menu {
+        display: block;
+    }
+
+    .header .fa-bars {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 12vh;
+        right: 0;
+        width: 40vw;
+        height: 40vh;
+        background: var(--color-black1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%); /* Impedir o conteúdo de sair da tela*/
+        transition: transform .3s ease-in;
+    }
+
+    .header .navbar.active {
+        transform: translateX(0);
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
 
 
 
