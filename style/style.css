@@ -471,19 +471,19 @@ section {
 
 [data-anime] {
     opacity: 0;
-    transition: .5s;
+    transition: .4s;
 }
 
 [data-anime="left"] {
-    transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
 } 
 
 [data-anime="right"] {
-    transform: translate3d(50px, 0, 0);
+    transform: translate3d(25px, 0, 0);
 }
 
 [data-anime="botton"] {
-    transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 70px, 0);
 }
 
 [data-anime].animate {
