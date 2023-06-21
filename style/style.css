@@ -299,54 +299,84 @@ section {
     flex-direction: column;
 }
 
+.contacts .box-text0 {
+    color: var(--color-black2);
+    max-width: 600px;
+    text-align: center;
+    padding-bottom: 4rem;
+    font-size: 16px;
+
+}
+
 .contacts .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 10px 45px;
-    width: 700px;
+    max-width: 1000px;
 }
 
-.contacts .container .form {
+.contacts .container .form .infos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contacts .container .form .text {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.contacts .container .form .infos div {
+    border-bottom: 1px solid black;
 }
 
 .contacts .container .form .label {
     font-size: 20px;
+    font-weight: 500;
+    cursor: text;
     margin: 5px 0 5px 0;
     color: var(--color-black1);
 }
 
 .contacts .container .form .input {
-    background-color: var(--color-black2);
-    padding: 15px;
+    background-color: transparent;
+    color: var(--color-black1);
+    padding: 15px 0 15px 15px;
     outline: none;
     border: 0;
     border-radius: 7px;
-    margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-
-
 .contacts .container .form .input::placeholder {
-    color: var(--color-white2);
+    color: var(--color-black1); 
+}
+
+.contacts .container .form .input:focus::-webkit-input-placeholder {
+    color: transparent;
 }
 
 .contacts .container .form .textarea {
-    background-color: var(--color-black2);
-    padding: 10px;
+    background-color: transparent;
+    color: var(--color-black1);
+    padding: 10px 0 10px 0;
     outline: none;
     border: 0;
     border-radius: 7px;
-    margin-bottom: 20px;
+    font-size: 14px;
+    height: 70px;
 }
 
 .contacts .container .form .textarea::placeholder {
-    color: var(--color-white2);
+    color: var(--color-black1);
+}
+
+.contacts .container .form .textarea:focus::-webkit-input-placeholder {
+    color: transparent;
 }
 
 .contacts .container .form .btn {

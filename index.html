@@ -252,18 +252,30 @@
 
     <h1 class="title">Contato</h1>
 
+    <div class="box-text0" >
+        <p>Entre em contato comigo pelo formulário ou pelos links no rodapé da página</p>
+    </div>
+
     <div class="container">
 
         <form class="form" action="https://api.staticforms.xyz/submit" method="post">
 
-                <label class="label" for="">Nome</label>
-                <input class="input" type="text" name="name" placeholder="Digite seu Nome ou Empresa" autocomplete="off">
+            <div class="infos">
+                <div class="box-text1">
+                    <label class="label" for="">Nome:</label>
+                    <input class="input" type="text" name="name" placeholder="Digite seu nome/Empresa" autocomplete="off">
+                </div>
+            
+                <div class="box-text2">
+                    <label class="label" for="">E-mail:</label>
+                    <input class="input" type="email" name="email" placeholder="Digite seu e-mail">
+                </div>
+            </div>
 
-                <label class="label" for="">E-mail</label>
-                <input class="input" type="email" name="email" placeholder="Digite seu e-mail">
-
-                <label class="label" for="">Mensagem</label>
-                <textarea class="textarea" name="message" cols="30" rows="10" placeholder="Digite sua mensagem..." ></textarea>
+            <div class="text" >
+                <label class="label" for="">Mensagem:</label>
+                <textarea class="textarea" name="message" cols="30" rows="10" placeholder="Olá, temos uma vaga de estágio para desenvolvedor front end e gostariamos de convida-lo para uma entrevista/teste..." ></textarea>
+            </div>
 
             <div>
                 <button class="btn" type="submit" >Enviar</button>
