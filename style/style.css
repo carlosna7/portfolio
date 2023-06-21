@@ -211,7 +211,8 @@ section {
 }
 
 .projects .container .box .image img {
-    width: 100%; 
+    width: 100%;
+    height: 100%;
     transition: transform 0.5s ease;
 }
 
@@ -415,6 +416,10 @@ section {
 @media (max-width: 500px) {
     html {
         font-size: 60%;
+    }
+
+    .home {
+        padding: 2rem 2rem;
     }
 
     section {
