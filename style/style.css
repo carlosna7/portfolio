@@ -128,6 +128,15 @@ section {
     justify-content: space-between;
 }
 
+.home .content .icons img:hover {
+    transform: scale(1.3);
+    transition: .4s;
+}
+
+.home .content .icons img:not(:hover) {
+    transition: .4s;
+}
+
 .home .content .icons:nth-child(1) {
     color: #fff;
 }
@@ -491,43 +500,53 @@ section {
     flex-direction: column;
 }
 
-/* .contacts .container {
+.footer .container .box-container .box-top {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px 45px;
-    max-width: 1000px;
+    gap: 100px;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid white;
+    width: 70%;
 }
 
-.contacts .container .box-container .infos {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.contacts .container .box-container .text {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid black;
-    margin-bottom: 40px;
-} */
-
-.footer .container .box-container .box1 {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-bottom: 32px;
-}
-
-.footer .container .box-container .box1 img {
+.footer .container .box-container .box-top .nav {
     color: var(--color-white);
     display: flex;
     flex-direction: column;
+    text-align: center;
+    gap: 20px;
 }
 
-.footer .container .box-container .box2 p {
+.footer .container .box-container .box-top .nav a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.footer .container .box-container .box-top .links-externos, 
+.footer .container .box-container .box-top .links-contato {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.footer .container .box-container .box-top .links-externos div,
+.footer .container .box-container .box-top .links-contato div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer .container .box-container .box-top .links-externos a,
+.footer .container .box-container .box-top .links-contato p {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.footer .container .box-container .box-botton p {
     color: var(--color-white);
     text-align: center;
 }
@@ -698,11 +717,11 @@ section {
 }
 
 [data-anime="left"] {
-    transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
 } 
 
 [data-anime="right"] {
-    transform: translate3d(25px, 0, 0);
+    transform: translate3d(20px, 0, 0);
 }
 
 [data-anime="botton"] {
