@@ -108,7 +108,7 @@ section {
     font-size: 4em;
     color: var(--color-black1);
     border-right: 5px solid var(--color-black1);
-    width: 82%;
+    width: 100%;
     box-sizing: content-box;
     white-space: nowrap;
     overflow: hidden;
@@ -628,6 +628,7 @@ section {
     
     .home .content .text1 h1 {
         font-size: 2.7em;
+        width: 82%;
     }
 
     .home .content .text1 h2 {

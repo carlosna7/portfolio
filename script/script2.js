@@ -10,7 +10,7 @@ function animeScroll() {
             element.classList.remove(animationClass);
         }
 
-        console.log(element.offsetTop)
+        // console.log(element.offsetTop)
     })
 }
 
