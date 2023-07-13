@@ -67,13 +67,16 @@ section {
     font-size: 3em;
 }
 
+/* ---------------------------------------------- */
+
 .content {
     display: flex;
     gap: 2rem;
 }
 
 .content .img {
-    width: 1100px;
+    min-width: 1100px;
+    height: auto;
 }
 
 .content .text {
@@ -94,6 +97,85 @@ section {
     transform: scale(1.15);
 }
 
+/* ---------------------------------------------- */
+
+.main-scroll-img {
+    max-width: 1100px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 4rem;
+}
+
+.main-scroll-img .icon {
+    background: var(--color-black1);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
+.main-scroll-img .icon i {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.cover {
+    position: relative;
+    width: 90%;
+    height: 200px;
+}
+
+.cover::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+}
+
+.cover::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+}
+
+.scroll-images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.scroll-images::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.child {
+    width: 300px;
+    height: 200px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.child-img {
+    width: 300px;
+    height: 200px; /* 60¨*/
+}
+
+/* ---------------------------------------------- */
+
 .section .content .text .box-text {
     text-align: justify;
 }
@@ -101,6 +183,8 @@ section {
 .section .content .text .box-text p {
     margin-bottom: 2rem;
 }
+
+/* ---------------------------------------------- */
 
 .section .content .text .buttons div {
     display: flex;
@@ -160,70 +244,68 @@ section {
     width: 100%;
 }
 
-/* ---------------------------------------------- */
+/* ------------------------------------------------------------------------------ */
 
-.main-scroll-img {
-    max-width: 1100px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+@media (max-width: 1200px) {
+    section {
+        padding: 4rem 5rem;
+    }
+
+    .header {
+        padding: 1.5rem 5.5rem 1.5rem 5.5rem;
+    }
+
+    .header .logo p {
+        font-size: 2.5em;
+    }
+
+    .section .content {
+        width: 70%;
+    }
+
+    .section .content .img .main-img img {
+        width: 70%;
+    }
 }
 
-.cover {
-    position: relative;
-    width: 90%;
-    height: 200px;
+/* ------------------------------------------------------------------------------ */
+
+@media (max-width: 990px) {
+    html {
+        font-size: 80%;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 }
 
-.cover::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px;
+/* ------------------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+    
+
+    
 }
 
-.cover::after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px;
+/* ------------------------------------------------------------------------------ */
+
+@media (max-width: 500px) {
+    html {
+        font-size: 60%;
+    }
+
+    section {
+        padding: 2rem 2rem;
+    }
+
+    .header {
+        padding: 1.5rem 3rem 1.5rem 3rem;
+    }
 }
 
-.scroll-images {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    overflow: auto;
-    position: relative;
-    scroll-behavior: smooth;
-}
-
-.scroll-images::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-.child {
-    min-width: 300px;
-    height: 300px;
-    margin-right: 40px;
-    cursor: pointer;
-}
-
-.child-img {
-    width: 100%;
-    height: 60%;
-}
-
-/* ---------------------------------------------- */
-/* ---------------------------------------------- */
-/* ---------------------------------------------- */
+/* ------------------------------------------------------------------------------ */
