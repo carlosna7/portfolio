@@ -1,0 +1,229 @@
+/* font-family: 'Fira Code', monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-black1: #000;
+    --color-black2: #222222;
+    --color-white: #fff;
+    --color-white2: #f1f1f1;
+    --color-what: #000000a9;
+    --color-blue1: #003cff;
+    --color-blue2: #407BFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+    text-decoration: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background:  var(--color-black2);
+    border-radius: 5rem;
+}
+
+body {
+    background: var(--color-white);
+}
+
+section {
+    padding: 8rem 7rem 0 7rem;
+}
+
+.title  {
+    color: var(--color-black2);
+    font-size: 3rem;
+    text-align: center;
+    padding: 0 0 4rem 0;
+}
+
+/* ---------------------------------------------- */
+
+.header {
+    background: var(--color-what);
+    backdrop-filter: blur(7px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 6.5rem 1.5rem 6.5rem;
+    position: fixed;
+    height: 10vh;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo p {
+    color: var(--color-white);
+    font-size: 3em;
+}
+
+.content {
+    display: flex;
+    gap: 2rem;
+}
+
+.content .img {
+    width: 1100px;
+}
+
+.content .text {
+    width: 500px;
+}
+
+.section .content .img .main-img {
+    overflow: hidden;
+}
+
+.section .content .img .main-img img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.section .content .img .main-img img:hover {
+    transform: scale(1.15);
+}
+
+.section .content .text .box-text {
+    text-align: justify;
+}
+
+.section .content .text .box-text p {
+    margin-bottom: 2rem;
+}
+
+.section .content .text .buttons div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.section .content .text .buttons .btn {
+    color: var(--color-white);
+    background: var(--color-black1);
+    display: inline-block;
+    position: relative;
+    border: 2px solid var(--color-black1);
+    overflow: hidden;
+    cursor: pointer;
+    padding: 8px 25px;
+    font-size: 1.3em;
+    margin-top: 10px;
+    z-index: 0;
+}
+
+.section .content .text .buttons .btn:hover {
+    color: var(--color-black1);
+    transition: .3s;
+}
+
+.section .content .text .buttons .btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--color-white);
+    z-index: -1;
+    color: var(--color-black1);
+    transition: all .4s;
+}
+
+.section .content .text .buttons .button1::before {
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.section .content .text .buttons .button1:hover::before {
+    width: 100%;
+}
+
+.section .content .text .buttons .button2::before {
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+.section .content .text .buttons .button2:hover::before {
+    width: 100%;
+}
+
+/* ---------------------------------------------- */
+
+.main-scroll-img {
+    max-width: 1100px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.cover {
+    position: relative;
+    width: 90%;
+    height: 200px;
+}
+
+.cover::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+}
+
+.cover::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 150px;
+}
+
+.scroll-images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.scroll-images::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.child {
+    min-width: 300px;
+    height: 300px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.child-img {
+    width: 100%;
+    height: 60%;
+}
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
