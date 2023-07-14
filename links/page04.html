@@ -1,12 +1,90 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../style/page-style.css">
+
+    <!-- fonte awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Clone Trello</title>
 </head>
 <body>
     
+    <header class="header">
+
+        <a href="../index.html" class="logo">
+            <p>&lt;../Carlos&gt;</p>
+        </a>
+
+    </header>
+
+    <section class="section">
+
+        <div class="content">
+
+            <div class="img">
+
+                <div class="main-img">
+                    <img src="../imagens/projeto4.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="text">
+
+                <div class="box-text">
+                    <h1 class="title" data-anime="botton">Clone Trello</h1>
+
+                    <p>O Custos foi o meu primeiro projeto desenvolvido com a biblioteca React. Essa aplicação tem como objetivo simular um sistema de criação de projetos, onde cada projeto criado terá um valor máximo de gastos definido na criação, e esse valor máximo de gastos diminui conforme os serviços forem sendo adicionados.</p>
+                    <p>Para desenvolver o Custos, foram utilizadas as tecnologias da biblioteca React, JavaScript, CSS e uma Fake API chamada JSON Server. Para acessar a API, as instruções estão no README do repositório.</p>
+                </div>
+
+                <div class="buttons">
+
+                    <div>
+                        <a href="https://clone-trello-carlosna7.vercel.app" class="btn button1" target="_blank">Site</a>
+                        <a href="https://github.com/carlosna7/clone-trello" class="btn button2" target="_blank">Repositório</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="main-scroll-img">
+
+            <div>
+                <button class="icon" onclick="scrolll()">
+                    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="cover">
+                <div class="scroll-images">
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img1.png" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img2.png" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img3.png" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img4.png" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img5.png" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/proejto1/img6.png" alt=""></div>
+                </div>
+            </div>
+
+            <div>
+                <button class="icon" onclick="scrollr()">
+                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
 </body>
+    <script src="../script/scroll.js"></script>
 </html>
