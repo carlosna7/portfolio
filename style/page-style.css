@@ -198,26 +198,6 @@ section {
     height: 200px;
 }
 
-/* .cover::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px; 
-}
-
-.cover::after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px; 
-} */
-
 .scroll-images {
     width: 100%;
     height: auto;
