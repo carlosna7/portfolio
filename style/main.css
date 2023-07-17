@@ -336,6 +336,11 @@ section {
     text-align: justify;
     padding-bottom: 40px;
 }
+.skills .container .box p a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
 
 /* ------------------------------------------------------------------------------ */
 .contacts {
