@@ -316,6 +316,9 @@ section {
 /* ------------------------------------------------------------------------------ */
 
 @media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 4rem 1.5rem 4rem;
+    }
 
     section {
         padding: 10rem 2rem;
@@ -391,13 +394,13 @@ section {
     }
 
     .child {
-        width: 170px;
+        width: 195px;
         height: 110px;
         cursor: pointer;
     }
     
     .child-img {
-        width: 170px;
+        width: 195px;
         height: 110px;
     }
 }

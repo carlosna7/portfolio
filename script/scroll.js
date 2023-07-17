@@ -11,7 +11,7 @@ function scrolll() {
     }
 
     if(window.innerWidth < 500){
-        left.scrollBy(-190, 0)
+        left.scrollBy(-215, 0)
     }
 }
 
@@ -28,6 +28,6 @@ function scrollr() {
     }
 
     if(window.innerWidth < 500){
-        right.scrollBy(190, 0)
+        right.scrollBy(215, 0)
     }
 }
