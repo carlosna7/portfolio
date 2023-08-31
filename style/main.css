@@ -19,6 +19,10 @@
     text-decoration: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 html::-webkit-scrollbar {
     width: 0.8rem;
 }
