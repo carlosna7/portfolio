@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
     <!-- fonte awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Login dark-light</title>
+    <title>ES Shows</title>
 </head>
+
 <body>
-    
+
     <header class="header">
 
         <a href="../index.html" class="logo">
@@ -29,7 +31,7 @@
             <div class="img">
 
                 <div class="main-img">
-                    <img src="../imagens/projetoimg2.png" alt="">
+                    <img src="../imagens/projetoimg7.PNG" alt="">
                 </div>
 
             </div>
@@ -37,17 +39,18 @@
             <div class="text">
 
                 <div class="box-text">
-                    <h1 class="title" data-anime="botton">Login dark-light</h1>
+                    <h1 class="title" data-anime="botton">ES Shows</h1>
 
-                    <p>A tela de login dark-light foi meu segundo projeto, dentor dele explorei diferentes funcionalidades do <strong>CSS</strong> e iniciei as aplicações em JavaScript para poder alterar as cores e manipular os elementos <strong>CSS</strong>. Neste projeto, apliquei diversas funcionalidades que aprendi do <strong>CSS</strong> para mudar de <strong>tema claro para escuro</strong>.</p>
-                    <p>Além da estilização, o script também foi criado a partir do meu conhecimento já no segundo mês de estudo na área.</p>
+                    <p>O Es Shows é meu primeiro projeto <strong>full-stack</strong>. Para que funcione corretamente, foi necessário desenvolver uma <strong><a href="https://github.com/carlosna7/api-esshow">API REST em Node</a></strong>. Esta API é essencial para estabelecer conexão com o banco de dados <strong>MongoDB</strong> e para realizar autenticação básica do usuário, utilizando apenas as ferramentas  de contexto do <strong>Next.js</strong>.</p>
+                    <p>Para obter os dados dos artistas foi utilizada a API do spotify.</p>
                 </div>
 
                 <div class="buttons">
 
                     <div>
-                        <a href="https://login-dark-light-carlosna7.vercel.app" class="btn button1" target="_blank">Site</a>
-                        <a href="https://github.com/carlosna7/Dark-light" class="btn button2" target="_blank">Repositório</a>
+                        <a href="https://es-shows-delta.vercel.app" class="btn button1" target="_blank">Site</a>
+                        <a href="https://github.com/carlosna7/es-shows" class="btn button2"
+                            target="_blank">Repositório</a>
                     </div>
 
                 </div>
@@ -56,8 +59,36 @@
 
         </div>
 
+        <div class="main-scroll-img">
+
+            <div>
+                <button class="icon" onclick="scrolll()">
+                    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="cover">
+                <div class="scroll-images">
+                    <div class="child"><img class="child-img" src="../imagens/projeto7/img1.PNG" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/projeto7/img2.PNG" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/projeto7/img3.PNG" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/projeto7/img4.PNG" alt=""></div>
+                    <div class="child"><img class="child-img" src="../imagens/projeto7/img5.PNG" alt=""></div>
+                </div>
+            </div>
+
+            <div>
+                <button class="icon" onclick="scrollr()">
+                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
     </section>
 
 </body>
-    <script src="../script/scroll.js"></script>
+<script src="../script/scroll.js"></script>
+
 </html>
