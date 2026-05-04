@@ -5,374 +5,168 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- css file -->
-    <link rel="stylesheet" href="style/main.css">
+    <!-- CSS_FILE -->
+    <link rel="stylesheet" href="style/geral.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/global.css">
 
-    <!-- fonte awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="scripts/logo.js"></script>
+    <script defer src="scripts/theme.js"></script>
 
-    <!-- fonte Fira code -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FONT_AWESOME -->
+    <script src="https://kit.fontawesome.com/c14ae00c78.js" crossorigin="anonymous"></script>
 
-    <title>Portfólio Carlos Eduardo</title>
+    <title>Portfólio - Carlos Eduardo</title>
 
+
+    <!-- ANTIGO -->
+    <!-- https://portfolio-carlosna7.vercel.app -->
+    
 </head>
-<body>
-
-<!-- iniciar com tela azul da m*rte e colocar um botão escrito reiniciar para consaeguir liberar o conteudo, boa idea?  -->
-
-        <!-- header section start -->
-
-<header class="header">
-
-    <a href="#home" class="logo">
-        <p>&lt;../Carlos&gt;</p>
-    </a>
-
-    <nav class="navbar">
-        <a href="#aboutMe">Sobre mim</a>
-        <a href="#projects">Projetos</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#contacts">Contato</a>
-    </nav>
-
-    <div class="mobile-menu">
-        <i class="fa-solid fa-bars" id="btn-enabled"></i>
-    </div>
-
-</header> 
-
-        <!-- home section start -->
-
-<section class="home" id="home">
-
-    <div class="content">
-
-        <div class="text1">
-            <h2>Olá, mundo!</h3>
-            <h1>Sou, Carlos.</h3>
-            <h2>Desenvolvedor Front-End</h2>
-        </div>
-
-        <div class="icons">
-            <a href="https://www.linkedin.com/in/carlosna7/" target="_blank">
-                <img src="imagens/linkedin-48.png" alt="">
-            </a>
-            <a href="https://github.com/carlosna7" target="_blank">
-                <img src="imagens/github-48.png" alt="">
-            </a>
-        </div>
-
-    </div>
-    
+<body data-theme="light">
 
 
-</section>
-
-        <!-- aboutMe section starts -->
-
-<section class="aboutMe" id="aboutMe">
-
-    <h1 class="title" data-anime="botton">Sobre Mim</h1>
-
-    <div class="container">
-
-        <div class="image" data-anime="left">
-            <img src="imagens/foto.png" alt="">
-        </div>
-
-        <div class="text" data-anime="right">
-            <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas. Tenho especialização em desenvolvimento Front-end e NodeJS, criando aplicações voltadas para a interface do usuário.</p> 
-            <p>Desde o inicio de 2023 tomei a decisão de iniciar outra graduação, desta vez no curso de Análise e Desenvolvimento de Sistemas, e durante esse período tenho dividido minha rotina entre faculdade, cursos e a prática/melhoria dos meus projetos e portfólio.</p>
-            <p>Até o momento, venho aperfeiçoando meus conhecimentos na área full-stack, Possuindo conhecimento em HTML, CSS, JavaScript, TypeScript, NodeJS, React, NextJS, Tailwind, MongoDB, MySql, Git e GitHub.</p>
-
-            <a href="imagens/cv_carlos_dev.pdf" class="btn button1">Currículo</a>
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- projects section starts -->
-
-<section class="projects" id="projects">
-<!-- igual produtos com botão do menu -->
-    <h1 class="title" data-anime="botton">Projetos</h1>
-
+    <!-- HEADER -->
+    <header>
         <div class="container">
+            <div class="wrapper">
 
-            <div class="box">
+                <div class="box-header">
 
-                <div class="text" data-anime="right">
-                    <h3>Hamburgueiraria NEXT</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg1.png" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/nextjs-240.png" alt="">
-                    <img src="imagens/react-200.png" alt="">
-                    <img src="imagens/tailwind-200.png" alt="">
-                    <img src="imagens/typescript-200.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page01.html" class="btn button1" >Ver Mais</a>
-                </div>
+                    <div class="logo" id="logo">
+                        <p>carlos <span>/dev</span></p>
+                    </div>
 
-            </div>
+                    <ul class="header-menu">
+                        <li>Sobre mim</li>
+                        <li>Projetos</li>
+                        <li>Habilidades</li>
+                        <li>Certificações</li>
+                        <li>Contato</li>
+                        <li class="theme-button" id="theme-button">
+                            <i class="fa-solid fa-moon pos-center"></i>
+                            <i class="fa-solid fa-sun pos-left"></i>
+                        </li>
+                    </ul>
 
-            <div class="box">
-                
-                <div class="text" data-anime="right">
-                    <h3>Custos Next</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg3.png" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/nextjs-240.png" alt="">
-                    <img src="imagens/react-200.png" alt="">
-                    <img src="imagens/tailwind-200.png" alt="">
-                    <img src="imagens/javascript-200.png" alt="">
-                    <img src="imagens/node-200.png" alt="">
-                    <img src="imagens/mongodb-96.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page03.html" class="btn button1" >Ver Mais</a>
                 </div>
 
             </div>
-
-            <div class="box">
-                
-                <div class="text" data-anime="right">
-                    <h3>Clone Trello</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg4.png" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/html-200.png" alt="">
-                    <img src="imagens/css-200.png" alt="">
-                    <img src="imagens/javascript-200.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page04.html" class="btn button1" >Ver    Mais</a>
-                </div>
-
-            </div>
-
-            <div class="box">
-                
-                <div class="text" data-anime="right">
-                    <h3>Clima agora</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg5.png" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/html-200.png" alt="">
-                    <img src="imagens/css-200.png" alt="">
-                    <img src="imagens/javascript-200.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page05.html" class="btn button1" >Ver Mais</a>
-                </div>
-
-            </div>
-
-            <div class="box">
-                
-                <div class="text" data-anime="right">
-                    <h3>theMov</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg6.png" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/nextjs-240.png" alt="">
-                    <img src="imagens/react-200.png" alt="">
-                    <img src="imagens/tailwind-200.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page06.html" class="btn button1" >Ver Mais</a>
-                </div>
-
-            </div>
-
-            <div class="box">
-                
-                <div class="text" data-anime="right">
-                    <h3>ES Shows</h3>
-                </div>
-                <div class="image" data-anime="left">
-                    <img src="imagens/projetoimg7.PNG" alt="">
-                </div>
-                <div class="icons" data-anime="right">
-                    <img src="imagens/nextjs-240.png" alt="">
-                    <img src="imagens/react-200.png" alt="">
-                    <img src="imagens/tailwind-200.png" alt="">
-                    <img src="imagens/javascript-200.png" alt="">
-                    <img src="imagens/node-200.png" alt="">
-                    <img src="imagens/mongodb-96.png" alt="">
-                </div>
-                <div data-anime="right">
-                    <a href="/links/page02.html" class="btn button1" >Ver Mais</a>
-                </div>
-
-            </div>
-
         </div>
-    
-</section>
+    </header>
 
-        <!-- skills section starts -->
 
-<section class="skills" id="skills">
+    <!-- BANNER -->
+    <section class="banner">
+        <div class="container">
+            <div class="wrapper d-flex align-items-center
+             justify-content-start">
 
-    <h1 class="title" data-anime="botton">Habilidades</h1>
+                <h1 class="banner-title">PORTFÓLIO</h>
 
-    <div class="container">
-
-        <div class="box">
-     
-            <div class="text" data-anime="right">
-                <h3>Meus conhecimentos</h3>
             </div>
-            <div class="image" data-anime="left">
-                <img src="imagens/html-200.png" alt="">
-                <img src="imagens/css-200.png" alt="">
-                <img src="imagens/javascript-200.png" alt="">
-                <img src="imagens/react-200.png" alt="">
-                <img src="imagens/nextjs-240.png" alt="">
-                <img src="imagens/node-200.png" alt="">
-            </div>
-            <div data-anime="right">
-                <p>Ambas as tecnologias acima foram utilizadas para desenvolver meu portfólio <strong>(HTML, CSS e JavaScript)</strong>, e são as que possuo maior domínio no desenvolvimento dos projetos. Além das ferramentas citadas acima, também foi utilizado o recurso da API <strong><a href="https://www.staticforms.xyz/"  target="_blank">staticforms</a></strong> para conectar o formulário com meu e-mail.</p>
-                <p>Além das stacks básicas de desenvolvimento web, possuo conhecimento em PHP, TypeScript, ReactJS, NextJS, Node, GraphQL, MongoDB e SQL. Estas são as tecnologias que mais utilizo no desenvolvimento de meus projetos.</p>
-            </div>
-
         </div>
+    </section>
 
-        <div class="box">
 
-            <div class="text" data-anime="right">
-                <h3>Proximas ferramentas</h3>
-            </div>
-            <div class="image" data-anime="left">
-                <img src="imagens/react-200.png" alt="">
-                <img src="imagens/nextjs-240.png" alt="">
-                <img src="imagens/tailwind-200.png" alt="">
-            </div>
-            <div data-anime="right">
-                <p>Para o futuro, pretendo aperfeiçoar minhas habilidades tanto na biblioteca <strong>ReactJS</strong> e <strong>NextJS</strong> quanto em outros frameworks e ferramentas como o <strong>Tailwind CSS</strong>. Tenho em mente que seguir esse caminho abrirá portas para estudar TypeScript e aprender tecnologias mais complexas.
-            </div>
+    <!-- SOBRE_MIM -->
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="d-flex justify-content-start flex-wrap gap-32">
 
+                    <div class="col-6 col-md-12">
+                        <h2>SOBRE MIM</h2>
+                        <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas. Tenho especialização em desenvolvimento Front-end e NodeJS, criando aplicações voltadas para a interface do usuário.</p>
+                        <p>Desde o inicio de 2023 tomei a decisão de iniciar outra graduação, desta vez no curso de Análise e Desenvolvimento de Sistemas, e dnormal urante esse período tenho dividido minha rotina entre faculdade, cursos e a prática/melhoria dos meus projetos e portfólio.</p>
+                        <p>Até o momento, venho aperfeiçoando meus conhecimentos na área full-stack, Possuindo conhecimento em HTML, CSS, JavaScript, TypeScript, NodeJS, React, NextJS, Tailwind, MongoDB, MySql, Git e GitHub.</p>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
 
-</section>
+    <!-- PROJETOS -->
 
-        <!-- contacts section starts -->
 
-<section class="contacts" id="contacts">
+    <!-- HABILIDADES -->
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="d-flex justify-content-start flex-wrap gap-32">
 
-    <h1 class="title">Contato</h1>
+                    <div class="col-6 col-md-12">
 
-    <div class="box-text0" >
-        <p>Entre em contato comigo pelo formulário ou pelos links no rodapé da página</p>
-    </div>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                    </div>
 
-    <div class="container">
-
-        <form class="form" action="https://api.staticforms.xyz/submit" method="post">
-
-            <div class="infos">
-                <div class="box-text1">
-                    <label class="label" for="">Nome:</label>
-                    <input class="input" type="text" name="name" placeholder="Digite seu nome/Empresa" autocomplete="off">
-                </div>
-            
-                <div class="box-text2">
-                    <label class="label" for="">E-mail:</label>
-                    <input class="input" type="email" name="email" placeholder="Digite seu e-mail">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text" >
-                <label class="label" for="">Mensagem:</label>
-                <textarea class="textarea" name="message" cols="30" rows="10" placeholder="Olá, temos uma vaga de estágio para desenvolvedor front end e gostariamos de convida-lo para uma entrevista/teste..." ></textarea>
-            </div>
 
-            <div class="box-btn">
-                <button class="btn button1" type="submit" >Enviar</button>
-            </div>
+    <!-- CERTIFICACOES -->
 
-            <!-- API utilizada: https://www.staticforms.xyz -->
 
-            <input type="hidden" name="accessKey" value="1026dcfa-1f97-4470-b765-3756cb7703ea">
-            <input type="hidden" name="redirectTo" value="https://portifolio-carlosna7.vercel.app">
-            
-        </form>
+    <!-- CONTATO -->
+    <section>
+        <div class="container">
+            <div class="wrapper">
 
-    </div>
-    
-</section>
+                <div class="d-flex justify-content-start flex-wrap gap-32">
 
-        <!-- footer section starts -->
-
-<footer class="footer" id="footer">
-
-    <div class="container">
-
-        <div class="box-container">
-            <div class="box-top" >
-                <div class="nav" >
-                    <h3>VEJA MAIS</h3>
-                    <div>
-                        <a href="#aboutMe">Sobre mim</a>
-                        <a href="#projects">Projetos</a>
-                        <a href="#skills">Habilidades</a>
-                        <a href="#contacts">Contato</a>
-                    </div>
-                </div>
-                <div class="links-externos">
-                    <div>
-                        <img src="imagens/linkedin-48.png" alt="">
-                        <a href="https://www.linkedin.com/in/carlos-eduardo-008009197/" target="_blank">Linked</a>
-                    </div>
-                    <div>
-                        <img src="imagens/github-48.png" alt="">
-                        <a href="https://github.com/carlosna7" target="_blank">Github</a>
-                    </div>
-                </div>
-                <div class="links-contato">
-                    <div>
-                        <img src="imagens/whatsapp-48.png" alt="">
-                        <p>11 952659821</p>
-                    </div>
-                    <div>
-                        <img src="imagens/email-48.png" alt="">
+                    <div class="col-6 col-md-12">
+                        <h2>ENTRE EM CONTATO</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero placeat quia et odio accusamus repellendus amet velit aperiam nobis, labore recusandae cumque illo? Nostrum, odio voluptatem nobis sunt itaque eum?</p>
+                        <h3>E-mail</h3>
                         <p>carloseduardo.na7@gmail.com</p>
+                        <h3>Telefone</h3>
+                        <p>(11) 95265-9821</p>
+                        <h3>Redes Sociais</h3>
+                        <p>linkedin icon</p>
+                        <p>github icon</p>
                     </div>
+
+                    <div class="col-6 col-md-12">
+                        <form action="" class="form">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" />
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu email" />
+
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem"></textarea>
+
+                            <button type="submit">Enviar</button>
+                        </form>
+
+                    </div>
+
                 </div>
-            </div>
-            <div class="box-botton">
-                <p>Desenvolvido por Carlos.</p>
-                <p>2023.</p>
+
             </div>
         </div>
-    </div>
+    </section>
 
-</footer>
 
-        <!-- script section start -->
+    <!-- FOOTER -->
 
-<script src="script/script.js"></script>
-<script src="script/script2.js"></script>
-
+    
 </body>
 </html>

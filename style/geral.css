@@ -1,0 +1,144 @@
+/* ----------------- ELEMENTS ----------------- */
+
+h2 {
+    font-weight: 600;
+    font-size: 3.2rem;
+    color: var(--title);
+    margin-block: 2rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--title);
+    margin-block: 1rem;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--text);
+    line-height:  170%;
+    /* line-height:  2rem; */
+}
+
+/* ----------------- ELEMENTS ----------------- */
+
+/* ----------------- HEADER ----------------- */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header .container {
+    padding: 0;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-header .header-menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.box-header .header-menu li {
+    color: var(--title);
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.logo p {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.logo p span {
+    background: var(--bg-light);
+    padding: .2rem 1rem;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+
+.theme-button {
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 10%;
+    height: 1.4rem;
+    padding: 1rem 1.4rem !important;
+    cursor: pointer;
+}
+
+.theme-button i {
+    color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    transition: .3s ease-in-out;
+}
+
+.theme-button i.pos-center {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.theme-button i.pos-left {
+    transform: translate(-250%, -50%) scale(0);
+    opacity: 0;
+}
+
+.theme-button i.pos-right {
+    transform: translate(150%, -50%) scale(0);
+    opacity: 0;
+}
+
+.theme-button.animating {
+    pointer-events: none;
+}
+
+/* ----------------- HEADER ----------------- */
+
+/* ----------------- HEADER ----------------- */
+
+/* .banner {
+    background: grey;
+} */
+
+.banner .container {
+    padding: 0;
+}
+
+.banner .container .wrapper {
+    height: 800px;
+}
+
+.banner-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--title);
+}
+
+/* ----------------- HEADER ----------------- */
