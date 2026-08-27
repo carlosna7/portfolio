@@ -26,18 +26,20 @@
 
     <!-- HEADER -->
     <header class="site-header" id="top">
-        <a href="#top" class="logo" id="logo">CAR<br>LOS</a>
+        <div class="site-header__inner section-inner">
+            <a href="#top" class="logo" id="logo">CAR<br>LOS</a>
 
-        <nav class="main-nav">
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#contato" class="btn btn--solid">Contato</a>
-        </nav>
+            <nav class="main-nav">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#contato" class="btn btn--solid">Contato</a>
+            </nav>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-            <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
     </header>
 
     <!-- MOBILE MENU -->
@@ -63,10 +65,10 @@
     <!-- HERO -->
     <section class="hero">
         <span class="hero__glyph" aria-hidden="true">&lt;/&gt;</span>
-        <div class="hero__content">
+        <div class="hero__content section-inner">
             <span class="hero__eyebrow">eu sou</span>
             <h1 class="hero__name">CARLOS</h1>
-            <div class="hero__role">desenvolvedor<br>de software</div>
+            <div class="hero__role">desenvolvedor<br>front-end</div>
         </div>
         <div class="hero__social">
             <a href="#" target="_blank" rel="noopener" data-site="github" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
@@ -82,40 +84,29 @@
 
     <!-- SOBRE_MIM -->
     <section class="about reveal" id="sobre">
-        <h2>Construo aplicações web e <span class="accent">APIs escaláveis</span>.</h2>
-        <div class="about__copy">
-            <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas. Tenho especialização em desenvolvimento Front-end e Node.js, criando aplicações voltadas para a interface do usuário.</p>
-            <p>Desde o início de 2023 tomei a decisão de iniciar outra graduação e, durante esse período, tenho dividido minha rotina entre faculdade, cursos e a prática/melhoria dos meus projetos e portfólio.</p>
+        <div class="about__inner section-inner">
+            <h2>Um pouco mais <span class="accent">sobre mim.</span></h2>
+            <div class="about__copy">
+                <p>Sou desenvolvedor Front-End há cerca de 2 anos, construindo interfaces interativas e responsivas com React, TypeScript e Next.js — atuando em sites de alto tráfego e sistemas internos no Grupo Ideal Trends, da componentização à integração com APIs REST.</p>
+                <p>Também curso Análise e Desenvolvimento de Sistemas na Universidade Cruzeiro do Sul. No dia a dia, priorizo SEO técnico, performance web, SSR/SSG e acessibilidade, colaborando direto com Produto e UX/UI em metodologias ágeis.</p>
+            </div>
+            <figure class="about__photo">
+                <img src="/assets/images/perfil.png" alt="Foto de perfil de Carlos Eduardo">
+            </figure>
         </div>
-        <div class="stats">
-            <div class="stat">
-                <span class="stat__num">2+</span>
-                <span class="stat__label">anos de mercado</span>
-            </div>
-            <div class="stat">
-                <span class="stat__num">6</span>
-                <span class="stat__label">projetos entregues</span>
-            </div>
-            <div class="stat">
-                <span class="stat__num">C1</span>
-                <span class="stat__label">inglês avançado</span>
-            </div>
-        </div>
-        <figure class="about__photo">
-            <img src="/assets/images/perfil.png" alt="Foto de perfil de Carlos Eduardo">
-        </figure>
     </section>
 
 
     <!-- PROJETOS -->
     <section class="projects" id="projetos">
-        <div class="projects__head reveal">
-            <div>
-                <h2>Trabalhos selecionados</h2>
+        <div class="section-inner">
+            <div class="projects__head reveal">
+                <div>
+                    <h2>Trabalhos selecionados</h2>
+                </div>
+                <a href="#projetos" class="btn btn--outline">Ver todos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <a href="#projetos" class="btn btn--outline">Ver todos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        <div class="projects__grid reveal">
+            <div class="projects__grid reveal">
 
             <a href="/projetos/hamburgueiraria.html" class="project-card">
                 <img class="project-card__cover" src="/assets/images/projetos/hamburgueiraria/capa.png" alt="Capa do projeto Hamburgueiraria NEXT">
@@ -157,6 +148,7 @@
                 </div>
             </a>
 
+            </div>
         </div>
     </section>
 
@@ -171,31 +163,38 @@
             </div>
             <div class="skills__grid">
 
-                <div class="skill-card skill-card--featured">
-                    <div class="skill-card__icon"><i class="fa-solid fa-server" aria-hidden="true"></i></div>
-                    <div class="skill-card__title">Backend &amp; APIs</div>
-                    <p>Node.js, Express, GraphQL, APIs REST, Flask, Spring Boot, integrações.</p>
-                    <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-card__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
-                    <div class="skill-card__title">Linguagens</div>
-                    <p>JavaScript, TypeScript, Python, PHP e Kotlin.</p>
-                    <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </div>
-
                 <div class="skill-card">
                     <div class="skill-card__icon"><i class="fa-solid fa-display" aria-hidden="true"></i></div>
                     <div class="skill-card__title">Frontend</div>
-                    <p>React, Next.js (SSR/SSG), Tailwind, HTML5, CSS3, Electron.</p>
+                    <p>React.js, React Hooks, componentes funcionais, Next.js (SSR/SSG), TypeScript, TailwindCSS, Sass, HTML5, CSS3 e Electron, com foco em acessibilidade.</p>
+                    <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+                    <div class="skill-card__title">Ecossistema React</div>
+                    <p>TanStack Query, React Hook Form, Zod, shadcn/ui e Radix UI (componentes headless).</p>
+                    <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-server" aria-hidden="true"></i></div>
+                    <div class="skill-card__title">Backend &amp; APIs</div>
+                    <p>APIs REST, Node.js, Express, GraphQL, Spring Boot (Kotlin) e Flask.</p>
+                    <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></div>
+                    <div class="skill-card__title">Qualidade &amp; versionamento</div>
+                    <p>Git em fluxo de branches e pull requests, code review, Clean Code, Jest e Cypress (E2E), metodologias ágeis.</p>
                     <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
 
                 <div class="skill-card">
                     <div class="skill-card__icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
-                    <div class="skill-card__title">Dados &amp; qualidade</div>
-                    <p>MySQL, MongoDB, Jest, Git, Clean Code, Postman.</p>
+                    <div class="skill-card__title">Linguagens &amp; dados</div>
+                    <p>JavaScript, TypeScript, Kotlin, Python, PHP, PostgreSQL, MySQL, MongoDB e SQL.</p>
                     <span class="skill-card__more">Ver mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
 
@@ -206,32 +205,34 @@
 
     <!-- CONTATO -->
     <section class="contact" id="contato">
-        <div class="contact__info">
-            <h2>Vamos<br>conversar.</h2>
-            <p>Aberto a oportunidades, freelas e projetos. Respondo em até 24h.</p>
-            <a href="#" class="contact__email" data-site="email" data-site-text>carloseduardo.na7@gmail.com</a>
-            <div class="contact__social">
-                <a href="#" target="_blank" rel="noopener" data-site="github"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-                <a href="#" target="_blank" rel="noopener" data-site="linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-                <a href="#" target="_blank" rel="noopener" data-site="whatsapp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+        <div class="contact__inner section-inner">
+            <div class="contact__info">
+                <h2>Vamos<br>conversar.</h2>
+                <p>Aberto a oportunidades, freelas e projetos. Respondo em até 24h.</p>
+                <a href="#" class="contact__email" data-site="email" data-site-text>carloseduardo.na7@gmail.com</a>
+                <div class="contact__social">
+                    <a href="#" target="_blank" rel="noopener" data-site="github"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+                    <a href="#" target="_blank" rel="noopener" data-site="linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    <a href="#" target="_blank" rel="noopener" data-site="whatsapp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                </div>
             </div>
-        </div>
 
-        <form action="" class="contact-form">
-            <div class="field">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-            </div>
-            <div class="field">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="voce@email.com" required>
-            </div>
-            <div class="field">
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte sobre o projeto" required></textarea>
-            </div>
-            <button type="submit" class="btn btn--solid">Enviar mensagem <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
-        </form>
+            <form action="" class="contact-form">
+                <div class="field">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+                </div>
+                <div class="field">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte sobre o projeto" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--solid">Enviar mensagem <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+            </form>
+        </div>
     </section>
 
 
