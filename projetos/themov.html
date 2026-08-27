@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS_FILE -->
+    <link rel="stylesheet" href="/style/fonts.css">
+    <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/geral.css">
+
+    <script defer src="/scripts/site-data.js"></script>
+    <script defer src="/scripts/logo.js"></script>
+    <script defer src="/scripts/menu.js"></script>
+    <script defer src="/scripts/gallery.js"></script>
+
+    <!-- FONT_AWESOME -->
+    <script src="https://kit.fontawesome.com/c14ae00c78.js" crossorigin="anonymous"></script>
+
+    <title>theMov - Portfólio Carlos Eduardo</title>
+
+    <link rel="icon" href="/assets/images/favicon.ico">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="top">
+        <div class="site-header__inner section-inner">
+            <a href="/index.html" class="logo" id="logo">CAR<br>LOS</a>
+
+            <nav class="main-nav">
+                <a href="/index.html#sobre">Sobre</a>
+                <a href="/index.html#projetos">Projetos</a>
+                <a href="/index.html#habilidades">Habilidades</a>
+                <a href="/index.html#contato" class="btn btn--solid">Contato</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__top">
+            <span class="logo">CAR<br>LOS</span>
+            <button class="mobile-menu__close" id="menuClose" aria-label="Fechar menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="/index.html#sobre">Sobre</a>
+            <a href="/index.html#projetos">Projetos</a>
+            <a href="/index.html#habilidades">Habilidades</a>
+            <a href="/index.html#contato">Contato</a>
+        </nav>
+        <div class="mobile-menu__social">
+            <a href="#" target="_blank" rel="noopener" data-site="github"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a href="#" target="_blank" rel="noopener" data-site="linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a href="#" data-site="email"><i class="fa-solid fa-envelope" aria-hidden="true"></i> E-mail</a>
+        </div>
+    </div>
+
+
+    <!-- PROJETO -->
+    <section class="project-hero">
+        <div class="breadcrumb section-inner">
+            <a href="/index.html#projetos">Projetos</a> <span>/</span> <span style="color:var(--accent)">theMov</span>
+        </div>
+
+        <div class="project-hero__grid section-inner">
+            <div class="project-gallery__main" id="galleryMain">
+                <div class="project-gallery__slide is-active" data-slide="0">
+                    <img src="/assets/images/projetos/themov/capa.png" alt="Tela inicial do theMov">
+                </div>
+                <div class="project-gallery__slide" data-slide="1">
+                    <img src="/assets/images/projetos/themov/01.png" alt="Tela 02 do theMov">
+                </div>
+                <div class="project-gallery__slide" data-slide="2">
+                    <img src="/assets/images/projetos/themov/02.png" alt="Tela 03 do theMov">
+                </div>
+                <div class="project-gallery__slide" data-slide="3">
+                    <img src="/assets/images/projetos/themov/03.png" alt="Tela 04 do theMov">
+                </div>
+                <span class="project-gallery__label" id="galleryLabel">Capa</span>
+            </div>
+
+            <div class="project-hero__copy">
+                <div class="project-tags">
+                    <span>Next.js</span>
+                    <span>React</span>
+                    <span>Tailwind</span>
+                </div>
+                <h1>theMov</h1>
+                <p>O theMov é meu segundo projeto em <strong>React</strong>. Priorizei estudar e aplicar as funcionalidades do <strong>Next.js</strong> e do <strong>Tailwind CSS</strong> no seu desenvolvimento.</p>
+                <p>Também usei a API do <a href="https://developer.themoviedb.org/docs" target="_blank" rel="noopener"><strong>The Movie Database</strong></a>, que reúne uma lista de filmes — os usuários podem pesquisar ou ver mais detalhes sobre os filmes em destaque.</p>
+
+                <dl class="project-meta">
+                    <div>
+                        <dt>Ano</dt>
+                        <dd>2023</dd>
+                    </div>
+                    <div>
+                        <dt>Função</dt>
+                        <dd>Frontend</dd>
+                    </div>
+                    <div>
+                        <dt>Tipo</dt>
+                        <dd>Projeto pessoal</dd>
+                    </div>
+                    <div>
+                        <dt>Stack principal</dt>
+                        <dd>React</dd>
+                    </div>
+                </dl>
+
+                <div class="project-hero__actions">
+                    <a href="https://themov-carlosna7.vercel.app" class="btn btn--solid" target="_blank" rel="noopener">Ver site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/carlosna7/themov" class="btn btn--outline" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Repositório</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-gallery">
+        <div class="section-inner">
+            <div class="project-gallery__head">
+                <div class="project-gallery__nav">
+                    <button type="button" id="galleryPrev" aria-label="Imagem anterior"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" id="galleryNext" aria-label="Próxima imagem"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="project-gallery__thumbs" id="galleryThumbs">
+                <button type="button" class="project-gallery__thumb is-active" data-thumb="0">
+                    <img src="/assets/images/projetos/themov/capa.png" alt="Miniatura da capa">
+                    <span>Capa</span>
+                </button>
+                <button type="button" class="project-gallery__thumb" data-thumb="1">
+                    <img src="/assets/images/projetos/themov/01.png" alt="Miniatura 02">
+                    <span>Tela 02</span>
+                </button>
+                <button type="button" class="project-gallery__thumb" data-thumb="2">
+                    <img src="/assets/images/projetos/themov/02.png" alt="Miniatura 03">
+                    <span>Tela 03</span>
+                </button>
+                <button type="button" class="project-gallery__thumb" data-thumb="3">
+                    <img src="/assets/images/projetos/themov/03.png" alt="Miniatura 04">
+                    <span>Tela 04</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="next-project">
+        <a href="/projetos/hamburgueiraria.html" class="next-project__inner">
+            <div>
+                <div class="next-project__label">Próximo projeto</div>
+                <div class="next-project__title">Hamburgueiraria NEXT</div>
+            </div>
+            <span class="next-project__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__bottom" style="padding-top:0;border-top:0">
+                <span>© 2026 Carlos</span>
+                <a href="#top">Voltar ao topo <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
