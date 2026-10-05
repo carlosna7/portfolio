@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS_FILE -->
-    <link rel="stylesheet" href="/style/fonts.css">
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/geral.css">
+    <link rel="stylesheet" href="../style/fonts.css">
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/geral.css">
 
-    <script defer src="/scripts/site-data.js"></script>
-    <script defer src="/scripts/logo.js"></script>
-    <script defer src="/scripts/menu.js"></script>
-    <script defer src="/scripts/gallery.js"></script>
+    <script defer src="../scripts/site-data.js"></script>
+    <script defer src="../scripts/menu.js"></script>
+    <script defer src="../scripts/gallery.js"></script>
 
     <!-- FONT_AWESOME -->
     <script src="https://kit.fontawesome.com/c14ae00c78.js" crossorigin="anonymous"></script>
 
-    <title>Custos Next - Portfólio Carlos Eduardo</title>
+    <title>Organ - Portfólio Carlos Eduardo</title>
 
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="icon" href="../assets/images/favicon.ico">
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="site-header" id="top">
         <div class="site-header__inner section-inner">
-            <a href="/index.html" class="logo" id="logo">CAR<br>LOS</a>
+            <a href="../index.html" class="logo" id="logo">CAR<br>LOS</a>
 
             <nav class="main-nav">
-                <a href="/index.html#sobre">Sobre</a>
-                <a href="/index.html#projetos">Projetos</a>
-                <a href="/index.html#habilidades">Habilidades</a>
-                <a href="/index.html#contato" class="btn btn--solid">Contato</a>
+                <a href="../index.html#sobre">Sobre</a>
+                <a href="../index.html#projetos">Projetos</a>
+                <a href="../index.html#habilidades">Habilidades</a>
+                <a href="../index.html#contato" class="btn btn--solid">Contato</a>
             </nav>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -49,10 +47,10 @@
             <button class="mobile-menu__close" id="menuClose" aria-label="Fechar menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
         </div>
         <nav class="mobile-menu__nav">
-            <a href="/index.html#sobre">Sobre</a>
-            <a href="/index.html#projetos">Projetos</a>
-            <a href="/index.html#habilidades">Habilidades</a>
-            <a href="/index.html#contato">Contato</a>
+            <a href="../index.html#sobre">Sobre</a>
+            <a href="../index.html#projetos">Projetos</a>
+            <a href="../index.html#habilidades">Habilidades</a>
+            <a href="../index.html#contato">Contato</a>
         </nav>
         <div class="mobile-menu__social">
             <a href="#" target="_blank" rel="noopener" data-site="github"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
@@ -65,22 +63,22 @@
     <!-- PROJETO -->
     <section class="project-hero">
         <div class="breadcrumb section-inner">
-            <a href="/index.html#projetos">Projetos</a> <span>/</span> <span style="color:var(--accent)">Custos Next</span>
+            <a href="../index.html#projetos">Projetos</a> <span>/</span> <span>Organ</span>
         </div>
 
         <div class="project-hero__grid section-inner">
             <div class="project-gallery__main" id="galleryMain">
                 <div class="project-gallery__slide is-active" data-slide="0">
-                    <img src="/assets/images/projetos/custos-next/capa.png" alt="Tela inicial do Custos Next">
+                    <img src="../assets/images/projetos/organ/capa.png" alt="Tela inicial do Organ">
                 </div>
                 <div class="project-gallery__slide" data-slide="1">
-                    <img src="/assets/images/projetos/custos-next/01.png" alt="Tela 02 do Custos Next">
+                    <img src="../assets/images/projetos/organ/01.png" alt="Resumo do painel do Organ">
                 </div>
                 <div class="project-gallery__slide" data-slide="2">
-                    <img src="/assets/images/projetos/custos-next/02.png" alt="Tela 03 do Custos Next">
+                    <img src="../assets/images/projetos/organ/02.png" alt="Tarefas do Organ em Kanban">
                 </div>
                 <div class="project-gallery__slide" data-slide="3">
-                    <img src="/assets/images/projetos/custos-next/03.png" alt="Tela 04 do Custos Next">
+                    <img src="../assets/images/projetos/organ/03.png" alt="Membros e convites do Organ">
                 </div>
                 <span class="project-gallery__label" id="galleryLabel">Capa</span>
             </div>
@@ -88,17 +86,17 @@
             <div class="project-hero__copy">
                 <div class="project-tags">
                     <span>Next.js</span>
-                    <span>Node.js</span>
-                    <span>MongoDB</span>
+                    <span>TypeScript</span>
+                    <span>GraphQL</span>
                 </div>
-                <h1>Custos Next</h1>
-                <p>O Custos Next é a segunda versão do meu primeiro projeto em React, agora feito com <strong>Next.js</strong>. A aplicação simula a criação de projetos, cada um com um valor máximo de gastos definido na criação.</p>
-                <p>Esse valor máximo diminui conforme os serviços são adicionados. Foi desenvolvido com Next.js, JavaScript e Tailwind CSS, integrado a uma <a href="https://github.com/carlosna7/api-custos-next" target="_blank" rel="noopener"><strong>API em Node</strong></a> com banco <strong>MongoDB</strong>.</p>
+                <h1>Organ</h1>
+                <p>O Organ é um organizador de equipe e tarefas. O líder cria a empresa, convida as pessoas pelo email e distribui as tarefas com responsáveis definidos e status: pendente, em andamento ou concluída.</p>
+                <p>O front foi desenvolvido com <strong>Next.js</strong>, <strong>TypeScript</strong> e Tailwind CSS, integrado a uma <a href="https://github.com/carlosna7/organ-api" target="_blank" rel="noopener"><strong>API GraphQL em Node</strong></a> com banco <strong>MongoDB</strong>.</p>
 
                 <dl class="project-meta">
                     <div>
                         <dt>Ano</dt>
-                        <dd>2023</dd>
+                        <dd>2026</dd>
                     </div>
                     <div>
                         <dt>Função</dt>
@@ -115,8 +113,8 @@
                 </dl>
 
                 <div class="project-hero__actions">
-                    <a href="https://custos-next-carlosna7.vercel.app" class="btn btn--solid" target="_blank" rel="noopener">Ver site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                    <a href="https://github.com/carlosna7/custos-next" class="btn btn--outline" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Repositório</a>
+                    <a href="https://organpainel.vercel.app" class="btn btn--solid" target="_blank" rel="noopener">Ver site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a href="https://github.com/carlosna7/organ" class="btn btn--outline" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Repositório</a>
                 </div>
             </div>
         </div>
@@ -132,19 +130,19 @@
             </div>
             <div class="project-gallery__thumbs" id="galleryThumbs">
                 <button type="button" class="project-gallery__thumb is-active" data-thumb="0">
-                    <img src="/assets/images/projetos/custos-next/capa.png" alt="Miniatura da capa">
+                    <img src="../assets/images/projetos/organ/capa.png" alt="Miniatura da capa">
                     <span>Capa</span>
                 </button>
                 <button type="button" class="project-gallery__thumb" data-thumb="1">
-                    <img src="/assets/images/projetos/custos-next/01.png" alt="Miniatura 02">
+                    <img src="../assets/images/projetos/organ/01.png" alt="Miniatura 02">
                     <span>Tela 02</span>
                 </button>
                 <button type="button" class="project-gallery__thumb" data-thumb="2">
-                    <img src="/assets/images/projetos/custos-next/02.png" alt="Miniatura 03">
+                    <img src="../assets/images/projetos/organ/02.png" alt="Miniatura 03">
                     <span>Tela 03</span>
                 </button>
                 <button type="button" class="project-gallery__thumb" data-thumb="3">
-                    <img src="/assets/images/projetos/custos-next/03.png" alt="Miniatura 04">
+                    <img src="../assets/images/projetos/organ/03.png" alt="Miniatura 04">
                     <span>Tela 04</span>
                 </button>
             </div>
@@ -152,10 +150,10 @@
     </section>
 
     <section class="next-project">
-        <a href="/projetos/themov.html" class="next-project__inner">
+        <a href="../projetos/hamburgueiraria.html" class="next-project__inner">
             <div>
                 <div class="next-project__label">Próximo projeto</div>
-                <div class="next-project__title">theMov</div>
+                <div class="next-project__title">Hamburgueiraria NEXT</div>
             </div>
             <span class="next-project__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
         </a>

@@ -68,11 +68,15 @@
     background: var(--dark);
     color: var(--dark-text);
     transform: translateX(100%);
-    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+    /* visibility evita que os links do menu fechado recebam foco pelo teclado */
+    visibility: hidden;
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1), visibility 0s .4s;
 }
 
 .mobile-menu.is-open {
     transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 .mobile-menu__top {
@@ -164,8 +168,23 @@ a[data-site="whatsapp"] i {
     padding: 80px 0;
 }
 
+.hero__grid {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* a grade (e o destaque do hover) some aos poucos na base do banner,
+       sem corte seco na passagem para a seção Sobre */
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, .55) 75%, rgba(0, 0, 0, .18) 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, .55) 75%, rgba(0, 0, 0, .18) 90%, transparent 100%);
+}
+
 .hero__glyph {
     position: absolute;
+    z-index: 1;
+    pointer-events: none;
     right: clamp(-40px, 3vw, 40px);
     top: clamp(50px, 6vw, 60px);
     font-size: clamp(180px, 20vw, 400px);
@@ -176,15 +195,19 @@ a[data-site="whatsapp"] i {
     user-select: none;
 }
 
+/* clareia o centro do banner, deixando a grade mais visível nas bordas */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 1;
+    pointer-events: none;
     background: radial-gradient(120% 80% at 50% 40%, rgba(255, 253, 248, .75) 0%, rgba(239, 234, 225, 0) 60%);
 }
 
 .hero__content {
     position: relative;
+    z-index: 2;
     text-align: center;
 }
 
@@ -223,6 +246,7 @@ a[data-site="whatsapp"] i {
 
 .hero__social {
     position: absolute;
+    z-index: 2;
     left: var(--pad-x);
     bottom: 56px;
     display: flex;
@@ -238,6 +262,7 @@ a[data-site="whatsapp"] i {
 
 .hero__scroll {
     position: absolute;
+    z-index: 2;
     right: var(--pad-x);
     bottom: 56px;
     display: flex;
@@ -261,6 +286,11 @@ a[data-site="whatsapp"] i {
     animation: fadeIn 1.4s 1s both;
 }
 
+.hero__scroll:hover span:first-child,
+.hero__scroll:hover i {
+    color: var(--blue-link);
+}
+
 @keyframes heroIn {
     from { opacity: 0; letter-spacing: .16em; filter: blur(12px); }
     to { opacity: 1; letter-spacing: -.045em; filter: blur(0); }
@@ -282,6 +312,20 @@ a[data-site="whatsapp"] i {
     transform: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        transition-duration: .01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* ----------------- SOBRE ----------------- */
 
 .about {
@@ -293,8 +337,7 @@ a[data-site="whatsapp"] i {
     grid-template-columns: 1.15fr .85fr;
     grid-template-areas:
         "heading photo"
-        "copy   photo"
-        "stats  photo";
+        "copy   photo";
     column-gap: 80px;
     align-items: start;
 }
@@ -318,33 +361,8 @@ a[data-site="whatsapp"] i {
     max-width: 52ch;
 }
 
-.about__copy p:last-child {
-    margin-bottom: 44px;
-}
-
-.stats {
-    grid-area: stats;
-    display: flex;
-    gap: 56px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-}
-
-.stat__num {
-    display: block;
-    font-size: 38px;
-    font-weight: 600;
-    letter-spacing: -.03em;
-}
-
-.stat__label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-top: 6px;
+.about__resume {
+    margin-top: 12px;
 }
 
 .about__photo {
@@ -410,14 +428,34 @@ a[data-site="whatsapp"] i {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* usa "scale" (e não transform) para não brigar com o parallax do GSAP, que mexe no transform */
+    transition: scale .8s cubic-bezier(.2, .7, .2, 1);
 }
 
+.project-card:hover .project-card__cover {
+    scale: 1.05;
+}
+
+/* sombra vinda de baixo: forte nos 30% inferiores (onde fica o texto) e some até a metade do card */
 .project-card::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(30, 25, 20, 0) 38%, rgba(30, 25, 20, .86) 100%);
+    /* degradê com várias paradas em curva (easing gradient): escurece bem a base,
+       onde fica o texto, e se dissolve sem formar faixa visível */
+    background: linear-gradient(0deg,
+            rgba(20, 16, 12, .92) 0%,
+            rgba(20, 16, 12, .87) 8%,
+            rgba(20, 16, 12, .78) 16%,
+            rgba(20, 16, 12, .66) 24%,
+            rgba(20, 16, 12, .52) 32%,
+            rgba(20, 16, 12, .38) 40%,
+            rgba(20, 16, 12, .25) 48%,
+            rgba(20, 16, 12, .14) 56%,
+            rgba(20, 16, 12, .06) 64%,
+            rgba(20, 16, 12, .015) 72%,
+            rgba(20, 16, 12, 0) 80%);
 }
 
 .project-card__go {
@@ -425,15 +463,57 @@ a[data-site="whatsapp"] i {
     top: 22px;
     right: 22px;
     z-index: 2;
-    width: 44px;
-    height: 44px;
+    height: 48px;
+    min-width: 48px;
+    padding: 0 16px;
     border-radius: 999px;
-    background: rgba(242, 237, 228, .94);
-    color: var(--ink);
+    background: var(--accent);
+    color: var(--paper);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    box-shadow: 0 10px 28px rgba(20, 16, 12, .4), 0 0 0 4px rgba(242, 237, 228, .28);
+    transition: background .4s, color .4s, padding .4s cubic-bezier(.2, .7, .2, 1);
+}
+
+.project-card__go i {
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+
+.project-card__go-label {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    font-size: 13px;
+    font-weight: 500;
+    transition: max-width .4s cubic-bezier(.2, .7, .2, 1), margin .4s, opacity .3s;
+}
+
+.project-card:is(:hover, :focus-visible) .project-card__go {
+    background: var(--blue);
+    color: var(--dark);
+    padding: 0 20px;
+}
+
+.project-card:is(:hover, :focus-visible) .project-card__go-label {
+    max-width: 120px;
+    margin-right: 10px;
+    opacity: 1;
+}
+
+.project-card:is(:hover, :focus-visible) .project-card__go i {
+    transform: translateX(3px);
+}
+
+/* em telas de toque não há hover, então o rótulo fica sempre visível */
+@media (hover: none) {
+    .project-card__go-label {
+        max-width: 120px;
+        margin-right: 10px;
+        opacity: 1;
+    }
 }
 
 .project-card__info {
@@ -461,14 +541,96 @@ a[data-site="whatsapp"] i {
     font-weight: 600;
     letter-spacing: -.03em;
     color: var(--cream-soft);
+    text-shadow: 0 2px 16px rgba(20, 16, 12, .45);
 }
 
 .project-card__info p {
     margin: 8px 0 0;
     font-size: 14px;
     line-height: 1.6;
-    color: rgba(247, 244, 238, .72);
+    color: rgba(247, 244, 238, .86);
+    text-shadow: 0 1px 10px rgba(20, 16, 12, .5);
     max-width: 38ch;
+}
+
+/* ----------------- PROJETOS: SCROLL HORIZONTAL ----------------- */
+
+/* sem o modo horizontal (GSAP indisponível ou "reduzir movimento"), o progresso fica escondido */
+.projects__progress {
+    display: none;
+}
+
+/* ativado pelo animations.js: a seção fica fixa e o scroll desliza os cards para o lado */
+.projects--horizontal {
+    height: 100vh;
+    height: 100svh;
+    padding: 110px 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* em flex coluna o margin auto faria o container crescer até a largura da trilha */
+.projects--horizontal > .section-inner {
+    width: 100%;
+}
+
+.projects--horizontal .projects__head {
+    margin-bottom: clamp(24px, 4vh, 44px);
+}
+
+.projects--horizontal .projects__grid {
+    display: flex;
+    width: max-content;
+    gap: 28px;
+}
+
+.projects--horizontal .project-card {
+    flex: 0 0 auto;
+    width: min(64vw, 680px);
+    height: min(56vh, 480px);
+}
+
+/* imagem mais larga que o card para sobrar margem para o parallax */
+.projects--horizontal .project-card__cover {
+    left: -8%;
+    width: 116%;
+    /* o reset global limita img a 100%, o que deixava uma faixa vazia na direita do card */
+    max-width: none;
+}
+
+.projects--horizontal .projects__progress {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: clamp(24px, 4vh, 40px);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--ink-mute);
+}
+
+.projects__count b {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.projects__bar {
+    position: relative;
+    flex: 1;
+    max-width: 320px;
+    height: 2px;
+    background: var(--border);
+    overflow: hidden;
+}
+
+.projects__bar-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
 /* ----------------- HABILIDADES ----------------- */
@@ -476,36 +638,39 @@ a[data-site="whatsapp"] i {
 .skills {
     background: var(--dark);
     color: var(--dark-text);
-    padding: 110px var(--pad-x);
+    /* o espaçamento lateral vem do .section-inner */
+    padding: 110px 0;
 }
 
-.skills__inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    gap: 72px;
-    align-items: start;
+/* título em cima, texto de apoio alinhado à direita */
+.skills__intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 56px;
 }
 
 .skills h2 {
-    margin: 0 0 24px;
-    font-size: clamp(30px, 3.2vw, 46px);
-    line-height: 1.1;
+    margin: 0;
+    max-width: 18ch;
+    font-size: clamp(30px, 3.6vw, 52px);
+    line-height: 1.08;
     letter-spacing: -.035em;
 }
 
 .skills__intro p {
-    margin: 0 0 36px;
+    margin: 0;
     font-size: 16px;
     line-height: 1.7;
     color: rgba(242, 237, 228, .6);
     max-width: 40ch;
 }
 
+/* 5 cards + 1 célula livre (o painel de tecnologias) = grid 3 x 2 */
 .skills__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -513,15 +678,19 @@ a[data-site="whatsapp"] i {
     background: var(--dark-card);
     border-radius: 18px;
     padding: 30px;
+    cursor: default;
+    outline: none;
     transition: transform .4s cubic-bezier(.2, .7, .2, 1), background .4s;
 }
 
-.skill-card:hover {
-    transform: translateY(-6px);
-    background: var(--dark-card-hover);
+.skill-card:is(:hover, .is-active) {
     transform: translate(-6px, -6px) rotate(-1deg);
-    background-color: var(--blue);  
+    background: var(--blue);
     color: #1E1915;
+}
+
+.skill-card:focus-visible {
+    box-shadow: 0 0 0 2px var(--dark), 0 0 0 4px var(--blue);
 }
 
 .skill-card__icon {
@@ -537,8 +706,7 @@ a[data-site="whatsapp"] i {
     margin-bottom: 52px;
 }
 
-.skill-card:hover .skill-card__icon,
-.skill-card--featured .skill-card__icon {
+.skill-card:is(:hover, .is-active) .skill-card__icon {
     background: rgba(30, 25, 20, .14);
     color: inherit;
 }
@@ -551,31 +719,149 @@ a[data-site="whatsapp"] i {
 }
 
 .skill-card p {
-    margin: 0 0 18px;
+    margin: 0;
     font-size: 14px;
     line-height: 1.65;
     color: rgba(242, 237, 228, .58);
 }
 
-.skill-card:hover p,
-.skill-card--featured p {
+.skill-card:is(:hover, .is-active) p {
     color: rgba(30, 25, 20, .72);
 }
 
-.skill-card__more {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: rgba(242, 237, 228, .75);
+/* lista de ícones dentro do card: só no mobile, onde o painel fica escondido */
+.skill-card__techs {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    margin-top: 20px;
+    list-style: none;
 }
 
-.skill-card:hover .skill-card__more,
-.skill-card--featured .skill-card__more {
-    color: inherit;
+.skill-card__techs li,
+.skills__panel-icon {
+    display: block;
+    background: currentColor;
+    -webkit-mask: var(--icon) center / contain no-repeat;
+    mask: var(--icon) center / contain no-repeat;
+}
+
+.skill-card__techs li {
+    width: 20px;
+    height: 20px;
+    opacity: .7;
+}
+
+/* ----------------- HABILIDADES: PAINEL ----------------- */
+
+.skills__panel {
+    position: relative;
+    border: 1px dashed rgba(242, 237, 228, .18);
+    border-radius: 18px;
+    padding: 30px;
+    overflow: hidden;
+    transition: border-color .4s, background .4s;
+}
+
+.skills__panel.is-active {
+    border-color: transparent;
+    background: var(--dark-card);
+}
+
+.skills__panel-empty,
+.skills__panel-content {
+    transition: opacity .35s, transform .45s cubic-bezier(.2, .7, .2, 1);
+}
+
+.skills__panel-empty {
+    position: absolute;
+    inset: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(242, 237, 228, .38);
+}
+
+.skills__panel-empty i {
+    font-size: 18px;
+    color: var(--blue);
+    animation: panelHint 1.8s ease-in-out infinite;
+}
+
+@keyframes panelHint {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-6px, -6px); }
+}
+
+.skills__panel-content {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.skills__panel.is-active .skills__panel-empty {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+
+.skills__panel.is-active .skills__panel-content {
+    opacity: 1;
+    transform: none;
+}
+
+.skills__panel-label {
+    display: block;
+    margin-bottom: 26px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.skills__panel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 22px 12px;
+    list-style: none;
+}
+
+/* cada ícone entra um depois do outro (o JS recria a lista a cada card) */
+.skills__panel-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.3;
+    color: rgba(242, 237, 228, .7);
+    animation: techIn .5s cubic-bezier(.2, .7, .2, 1) both;
+    animation-delay: calc(var(--i, 0) * 50ms);
+}
+
+.skills__panel-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--dark-text);
+}
+
+@keyframes techIn {
+    from { opacity: 0; transform: translateY(14px) scale(.8); }
+    to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1023px) {
+    .skills__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ----------------- CONTATO ----------------- */
@@ -673,6 +959,12 @@ a[data-site="whatsapp"] i {
     color: var(--ink);
     outline: none;
     resize: none;
+    transition: border-color .3s;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-bottom-color: var(--accent);
 }
 
 .contact-form .btn {
@@ -680,6 +972,28 @@ a[data-site="whatsapp"] i {
     align-self: flex-start;
     padding: 16px 28px;
     font-size: 15px;
+}
+
+.contact-form .btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.contact-form__honeypot {
+    display: none;
+}
+
+.contact-form__status {
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+.contact-form__status:empty {
+    display: none;
+}
+
+.contact-form__status.is-error {
+    color: #A3412F;
 }
 
 /* ----------------- FOOTER ----------------- */
@@ -1055,8 +1369,7 @@ a[data-site="whatsapp"] i {
         grid-template-areas:
             "heading"
             "photo"
-            "copy"
-            "stats";
+            "copy";
         column-gap: 0;
         row-gap: 20px;
     }
@@ -1069,25 +1382,8 @@ a[data-site="whatsapp"] i {
         max-width: none;
     }
 
-    .about__copy p:last-child {
-        margin-bottom: 0;
-    }
-
     .about__photo {
         height: 300px;
-    }
-
-    .stats {
-        gap: 28px;
-        padding-top: 22px;
-    }
-
-    .stat__num {
-        font-size: 26px;
-    }
-
-    .stat__label {
-        font-size: 9px;
     }
 
     .projects {
@@ -1107,13 +1403,28 @@ a[data-site="whatsapp"] i {
         font-size: 26px;
     }
 
-    .skills {
-        padding: 56px 24px;
+    .projects--horizontal {
+        padding: 90px 0 28px;
     }
 
-    .skills__inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
+    .projects--horizontal .projects__grid {
+        gap: 16px;
+    }
+
+    .projects--horizontal .project-card {
+        width: 82vw;
+        height: min(52vh, 380px);
+    }
+
+    .skills {
+        padding: 56px 0;
+    }
+
+    .skills__intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 32px;
     }
 
     .skills__grid {
@@ -1127,6 +1438,15 @@ a[data-site="whatsapp"] i {
 
     .skill-card__icon {
         margin-bottom: 28px;
+    }
+
+    /* sem hover no celular: os ícones ficam dentro de cada card e o painel some */
+    .skill-card__techs {
+        display: flex;
+    }
+
+    .skills__panel {
+        display: none;
     }
 
     .contact {

@@ -8,6 +8,11 @@
     font-weight: 400;
 }
 
+/* o reset acima zera o peso de tudo, então o negrito precisa ser devolvido */
+strong, b {
+    font-weight: 600;
+}
+
 a {
     color: inherit;
     text-decoration: none;
